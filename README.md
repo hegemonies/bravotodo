@@ -1,11 +1,24 @@
-### Ruby on Rails template project
+### How to run application with docker
+##### Note: you should independently install docker and docker-compose
+#### Create docker image:
+```shell script
+$ docker build -t bravo-todo -f docker/Dockerfile .
+```
+#### Run compose:
+```shell script
+$ docker-compose -f docker/docker-compose.yml up -d
+```
+#### Stop compose:
+```shell script
+$ docker-compose -f docker/docker-compose.yml stop
+```
 
-This project is based on a GitLab [Project Template](https://docs.gitlab.com/ee/gitlab-basics/create-project.html).
-
-Improvements can be proposed in the [original project](https://gitlab.com/gitlab-org/project-templates/rails).
-
-### CI/CD with Auto DevOps
-
-This template is compatible with [Auto DevOps](https://docs.gitlab.com/ee/topics/autodevops/).
-
-If Auto DevOps is not already enabled for this project, you can [turn it on](https://docs.gitlab.com/ee/topics/autodevops/#enabling-auto-devops) in the project settings.
+#### Simple bash scripts:
+##### Run:
+```shell script
+$ docker/simple_run.sh
+```
+##### Stop:
+```shell script
+$ docker/simple_kill.sh
+```
