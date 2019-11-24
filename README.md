@@ -12,3 +12,13 @@ $ docker-compose -f docker/docker-compose.yml up -d
 ```shell script
 $ docker-compose -f docker/docker-compose.yml stop
 ```
+
+#### Simple bash scripts:
+##### Run:
+```shell script
+$ docker/simple_run.sh
+```
+##### Stop:
+```shell script
+$ docker/simple_kill.sh
+```
