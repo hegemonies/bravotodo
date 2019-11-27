@@ -10,10 +10,10 @@ COPY docker/resources/custom_database_settings.yml config/database.yml
 COPY docker/resources/entrypoint.sh ./entrypoint.sh
 
 RUN cp -r /work/vendor/cache /app/vendor/cache
-RUN cp /work/Gemfile.lock .
+RUN rm Gemfile.lock && cp /work/Gemfile.lock .
 
 RUN chmod +x entrypoint.sh
 
 EXPOSE 3000
 
-CMD bin/rails server
+CMD ["bin/rails", "server", "-b", "0.0.0.0"]
