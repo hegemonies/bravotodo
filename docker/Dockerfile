@@ -1,12 +1,19 @@
-FROM ruby:2.6.5
+FROM bravotodo-builder
+
 WORKDIR /app
 COPY . /app
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
-RUN apt-get install -y nodejs
-RUN bin/bundle install
+
+#RUN bin/bundle install --path vendor/cache
+
 RUN rm config/database.yml
 COPY docker/resources/custom_database_settings.yml config/database.yml
 COPY docker/resources/entrypoint.sh ./entrypoint.sh
+
+RUN cp -r /work/vendor/cache /app/vendor/cache
+RUN rm Gemfile.lock && cp /work/Gemfile.lock .
+
 RUN chmod +x entrypoint.sh
+
 EXPOSE 3000
-CMD ./entrypoint.sh
+
+CMD ["bin/rails", "server", "-b", "0.0.0.0"]
