@@ -28,3 +28,5 @@
 
 # Ignore RubyMine files
 /.idea/**
+
+/vendor/cache

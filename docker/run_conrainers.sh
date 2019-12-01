@@ -34,4 +34,4 @@ echo "docker run ${name_web_container} port:3000"
 if $docker_images | grep bravotodo; then
   docker run --rm -d -p 3000:3000 --network ${network_name} --name ${name_web_container} bravo-todo
 fi
-#docker run --rm -d -p 3000:3000 --network skynet --name web bravo-todo
+#docker run --rm -p 3000:3000 --network skynet --name web bravo-todo bash
