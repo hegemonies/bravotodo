@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  resources :users
+  devise_for :users
   resources :todos
   get 'welcome/index'
 
-  root 'welcome#index'
+  root 'todos#index'
+
+  namespace :user do
+    get 'todos/index' => 'todos#index'
+  end
 end
