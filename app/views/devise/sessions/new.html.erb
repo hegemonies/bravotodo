@@ -6,12 +6,12 @@
 
   <div class="enter-form-div">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="col-3">
+      <div class="col-1">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "effect-1", placeholder: "Login" %>
         <span class="focus-border"></span>
       </div>
 
-      <div class="col-3">
+      <div class="col-1">
         <%= f.password_field :password, autocomplete: "current-password", class: "effect-1", placeholder: "Password" %>
         <span class="focus-border"></span>
       </div>
@@ -36,7 +36,7 @@
     <% end %>
 
     <div class="actions">
-      <p class="sign-up">
+      <p class="sign">
         <%= link_to "Sign up", new_user_registration_path %>
       </p>
     </div>

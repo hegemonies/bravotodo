@@ -87,7 +87,7 @@ body {
     color: rgba(0, 0, 0, 0.3);
 }
 
-.col-3 {
+.col-1 {
     margin: 40px 3%;
     position: relative;
 }
@@ -176,7 +176,7 @@ input {
     color:#fff;
 }
 
-.actions .sign-up {
+.actions .sign {
     font-family: Ubuntu, serif;
     margin: 10px 10px;
     text-align: center;
@@ -185,6 +185,11 @@ input {
     border-radius: 10px;
 }
 
-.actions .sign-up a {
+.actions .sign a {
     color: #fffbf6;
+}
+
+em {
+    font-family: Ubuntu, serif;
+    color: rgba(33, 33, 38, 0.66);
 }
