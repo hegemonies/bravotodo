@@ -1,32 +1,48 @@
-<p id="notice"><%= notice %></p>
+<%= render 'user-info' %>
 
-<h1>Todos</h1>
+<div class="enter-div">
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
 
-<%= link_to 'New Todo', new_todo_path %>
-<p><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></p>
+  <p class="enter-h2">ToDos</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Done</th>
-      <th>Description</th>
-      <th>Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="col-1">
+    <%= link_to '  ', new_todo_path, class: "plus_todo" %>
+  </div>
 
-  <tbody>
-    <% @todos.each do |todo| %>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
       <tr>
-        <td><%= todo.done %></td>
-        <td><%= todo.description %></td>
-        <td><%= todo.date %></td>
-        <td><%= link_to 'Show', todo %></td>
-        <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
-        <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Done</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Show</th>
+        <th>Edit</th>
+        <th>Delete</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
+    </table>
+  </div>
 
-<br>
+  <div class="tbl-content">
+    <table  cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+      <% @todos.each do |todo| %>
+        <tr>
+          <td><%= todo.done %></td>
+          <td><%= todo.description %></td>
+          <td><%= todo.date %></td>
+          <td><%= link_to 'Show', todo %></td>
+          <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
+          <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <br>
+
+</div>
