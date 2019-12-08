@@ -1,10 +1,7 @@
+<%= render 'user-info' %>
+<%= render 'back' %>
+
 <div class="enter-div">
   <p class="enter-h2">New Todo</p>
-
   <%= render 'form', todo: @todo %>
-
-  <div class="col-1">
-    <%= link_to name = '   ', todos_path, class: "button-back" %>
-  </div>
-
 </div>

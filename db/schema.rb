@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2019_12_01_145517) do
   enable_extension "plpgsql"
 
   create_table "todos", force: :cascade do |t|
-    t.boolean "done"
+    t.boolean "done", default: false
     t.string "description"
     t.datetime "date"
     t.datetime "created_at", null: false
@@ -25,10 +25,6 @@ ActiveRecord::Schema.define(version: 2019_12_01_145517) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "login"
-    t.string "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

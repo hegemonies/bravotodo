@@ -1,6 +1,14 @@
-<h1>Editing Todo</h1>
+<%= render 'user-info' %>
+<%= render 'back' %>
 
-<%= render 'form', todo: @todo %>
+<div class="enter-div">
+  <p class="enter-h2">Editing Todo</p>
 
-<%= link_to 'Show', @todo %> |
-<%= link_to 'Back', todos_path %>
+  <div class="col-1">
+    <%= form.label :done %>
+    <%= form.check_box :done %>
+  </div>
+
+  <%= render 'form', todo: @todo %>
+
+</div>
