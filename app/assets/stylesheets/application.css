@@ -13,3 +13,178 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("background.svg");
+    background-color: #cccccc;
+}
+
+.enter-div {
+    position: absolute;
+    left: 50%;
+    /*margin: 0 -50% 0 0;*/
+    transform: translate(-50%, -50%);
+    top: 50%;
+}
+
+.enter-h1 {
+    font-family: Ubuntu, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 60px;
+    color: #337EEF;
+    text-align: center;
+    text-shadow: 5px 4px 4px rgba(38, 92, 172, 0.56);
+}
+
+.enter-h2 {
+    font-family: Ubuntu, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.enter-h5 {
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+
+    color: rgba(172, 42, 42, 0.88);
+}
+
+.enter-form-div {
+    background: rgba(26, 45, 133, 0.67);
+    border-radius: 30px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 15px;
+    position: relative;
+}
+
+.enter-form-div-field {
+    /*position: absolute;*/
+    width: 313px;
+    height: 43px;
+    margin-bottom: 10px;
+}
+
+.enter-form-div-field-label-p {
+    font-family: Ubuntu, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.col-3 {
+    margin: 40px 3%;
+    position: relative;
+}
+
+input {
+    font: 15px/24px Ubuntu, serif;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+
+.effect-1 {
+    border: 0;
+    padding: 7px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.effect-1 ~ .focus-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #337EEF;
+    transition: 0.4s;
+}
+
+.effect-1:focus ~ .focus-border {
+    width: 100%;
+    transition: 0.4s;
+}
+
+.main-container-checkbox {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.checkbox {line-height:0;}
+.checkbox .checkbox-container{display:inline-block;position:relative;}
+.checkbox .checkbox-container input{cursor:pointer;opacity: 0;position: absolute;margin: 0;width: 100%;height: 100%;left:0;z-index: 1;}
+.checkbox .checkbox-container input:hover ~ .checkbox-checkmark::after{display:block;opacity:0.5;}
+.checkbox .checkbox-container input:checked ~ .checkbox-checkmark{background: #337EEF;border-color:transparent;}
+.checkbox .checkbox-container input:checked ~ .checkbox-checkmark::after{display:block;opacity:1;border-color:white;}
+.checkbox .checkbox-container .checkbox-checkmark{background-color: #eee;border: 1px #ddd solid;}
+.checkbox .checkbox-container .checkbox-checkmark::after{box-sizing: inherit;cursor:pointer;display:none;position: absolute;content: "";border: solid #bebebe;-webkit-transform: rotate(45deg);-ms-transform: rotate(45deg);transform: rotate(45deg);}
+.checkbox .checkbox-container .checkbox-checkmark:hover::after{display:block;}
+.checkbox label{display:inline;padding-left:0.5rem;vertical-align: super;}
+.checkbox label:hover ~ .checkbox-checkmark::after{display:block;opacity:0.5;}
+
+.checkbox.tiny label {
+    color: #ffffff;
+    font-size:0.9em;
+}
+
+.checkbox.tiny .checkbox-container .checkbox-checkmark {
+    width:20px;
+    height:20px;
+}
+
+.checkbox.tiny .checkbox-container .checkbox-checkmark:after {
+    height:12px;
+    width:6px;
+    left:7px;
+    top:3px;
+    border-width: 0 2px 3px 0;
+}
+
+.actions {
+    position: relative;
+    margin: 20px;
+}
+
+.actions input[type="submit"] {
+    font: 15px/24px Ubuntu, serif;
+    background: #337EEF;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    border-bottom: 3px solid #5994FF;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.actions input[type="submit"]:hover {
+    background: #3756ef;
+    color:#fff;
+}
+
+.actions .sign-up {
+    font-family: Ubuntu, serif;
+    margin: 10px 10px;
+    text-align: center;
+    background-color: #3756ef;
+    border: #3800cc;
+    border-radius: 10px;
+}
+
+.actions .sign-up a {
+    color: #fffbf6;
+}
