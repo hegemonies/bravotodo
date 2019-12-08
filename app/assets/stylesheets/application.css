@@ -207,7 +207,7 @@ em {
 .button-back {
     background-image: url("icons8-arrow-left-64 1.svg");
     margin: auto;
-    padding: 15px 23px;
+    padding: 14px 23px;
 }
 
 .button-back:hover {
@@ -296,6 +296,6 @@ td a {
 
 .plus_todo {
     background-image: url("plus.png");
-    margin: auto;
-    padding: 8px 14px;
+    padding: 1.5px 10px;
+    margin: auto auto auto 90%;
 }

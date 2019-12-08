@@ -1,0 +1,39 @@
+<%= form_with(model: todo, local: true) do |form| %>
+  <% if todo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
+
+      <ul>
+        <% todo.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="main-container-checkbox">
+    <div class="checkbox tiny">
+      <div class="checkbox-container">
+        <%= form.check_box :remember_me, id: "checkbox-tiny", checked_type: "checkbox" %>
+        <div class="checkbox-checkmark"></div>
+      </div>
+      <%= form.label :remember_me, for: "checkbox-tiny" %>
+    </div>
+  </div>
+
+  <div class="col-1">
+    <%= form.text_field :description, class: "effect-1", placeholder: "Description" %>
+    <span class="focus-border"></span>
+  </div>
+
+  <div class="date-label">
+    <%= form.label :date, class: "label" %>
+  </div>
+  <div class="date">
+    <%= form.datetime_select :date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
