@@ -44,8 +44,9 @@ body {
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
+    color: #337EEF;
     text-align: center;
-    color: rgba(0, 0, 0, 0.8);
+    text-shadow: 5px 4px 4px rgba(38, 92, 172, 0.56);
 }
 
 .enter-h5 {
@@ -90,6 +91,17 @@ body {
 .col-1 {
     margin: 40px 3%;
     position: relative;
+}
+
+.date-label {
+    font-family: Ubuntu, serif;
+    font-size: 16px;
+    margin: 10px;
+    text-align: center;
+}
+
+.date {
+    margin: 10px;
 }
 
 input {

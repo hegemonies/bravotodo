@@ -11,18 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :done %>
-    <%= form.check_box :done %>
+  <div class="col-1">
+    <%= form.text_field :description, class: "effect-1", placeholder: "Description" %>
+    <span class="focus-border"></span>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
+  <div class="date-label">
+    <%= form.label :date, class: "label" %>
   </div>
-
-  <div class="field">
-    <%= form.label :date %>
+  <div class="date">
     <%= form.datetime_select :date %>
   </div>
 
