@@ -13,6 +13,11 @@ $ docker-compose -f docker/docker-compose.yml up -d
 $ docker-compose -f docker/docker-compose.yml stop
 ```
 
+#### Or run compose in interactive mode:
+```shell script
+$ docker-compose -f docker/docker-compose.yml up
+```
+
 #### Simple bash scripts:
 ###### Note: run all scripts from root folder (./bravotodo)
 ##### Run:
