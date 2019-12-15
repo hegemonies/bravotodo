@@ -35,12 +35,18 @@ class TodosController < ApplicationController
 
   # PATCH/PUT /todos/1
   def update
-    respond_to do |format|
-      if @todo.update(todo_params)
-        format.html { redirect_to todos_path, notice: 'Todo was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
+    #respond_to do |format|
+    #  if @todo.update(todo_params)
+    #    format.html { redirect_to todos_path, notice: 'Todo was successfully updated.' }
+    #  else
+    #    format.html { render :edit }
+    #  end
+    #end
+    @todo = current_user.todos.find(params[:id])
+    if @todo.update(todo_params)
+      redirect_to todos_path, notice: 'Todo was successfully updated.'
+    else
+      render :edit
     end
   end
 
