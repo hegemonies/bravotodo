@@ -1,9 +1,5 @@
-<!--user info-->
-<div>
-  <p class="enter-h5"><%= current_user.email %></p>
-</div>
 
-<!--sign out-->
 <div class="right-side">
+  <p class="user-name"><%= current_user.email %></p>
   <%= link_to "    ", destroy_user_session_path, :method => :delete , class: "button-exit"%>
 </div>
