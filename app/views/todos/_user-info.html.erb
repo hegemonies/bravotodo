@@ -1,5 +1,14 @@
 
 <div class="right-side">
-  <p class="user-name"><%= current_user.email %></p>
-  <%= link_to "    ", destroy_user_session_path, :method => :delete , class: "button-exit"%>
+  <div>
+<!--    <p class="user-image" style="float:left">    </p>-->
+<!--    <img src="ico-user-image.png" alt="che" style="float:left">-->
+    <%= image_tag("ico-user-image.png", :alt => "che", style: "float:left") %>
+    <p class="user-name" style="float:left"><%= current_user.email %></p>
+  </div>
+  <br>
+  <div>
+    <p style="float:left"><%= link_to "    ", destroy_user_session_path, :method => :delete , class: "button-exit"%></p>
+    <p style="float:left" class="user-name">Exit</p>
+  </div>
 </div>

@@ -302,9 +302,14 @@ td a {
     font-family: Ubuntu, serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
-    line-height: 37px;
+    margin: 6px;
     color: #3756ef;
+}
+
+.user-image {
+    background-image: url("ico-user-image.png");
+    background-size: 72px;
+    padding: 10px 10px;
 }
 
 .compete-todo {
