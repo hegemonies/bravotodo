@@ -1,8 +1,13 @@
 
+<% @selected_date = Time.current %>
+<% @date_last_day = current_user.todos.where('date BETWEEN ? AND ?', 1.day.ago, @selected_date) %>
+<% @date_last_week = current_user.todos.where('date BETWEEN ? AND ?', 1.week.ago, @selected_date) %>
+<% @date_last_month = current_user.todos.where('date BETWEEN ? AND ?', 1.month.ago, @selected_date) %>
+<% @all_time = current_user.todos %>
+
 <p class="enter-h2">Statistic</p>
 
 <table cellpadding="0" cellspacing="0" border="0">
-  <% @selected_date = Time.current %>
   <tbody>
     <tr>
       <th>Time</th>
@@ -12,28 +17,37 @@
     <tr>
       <td>Per day</td>
       <td>
-        <%= current_user.todos.where('date BETWEEN ? AND ?', 1.day.ago, @selected_date.end_of_day).where(done: true).count %>
+        <%= @date_last_day.where(done: true).count %>
       </td>
       <td>
-        <%= current_user.todos.where('date BETWEEN ? AND ?', 1.day.ago, @selected_date.end_of_day).where(done: false).count %>
+        <%= @date_last_day.where(done: false).count %>
       </td>
     </tr>
     <tr>
       <td>Per week</td>
       <td>
-        <%= current_user.todos.where('date BETWEEN ? AND ?', 1.week.ago, @selected_date.end_of_day).where(done: true).count %>
+        <%= @date_last_week.where(done: true).count %>
       </td>
       <td>
-        <%= current_user.todos.where('date BETWEEN ? AND ?', 1.week.ago, @selected_date.end_of_day).where(done: false).count %>
+        <%= @date_last_week.where(done: false).count %>
       </td>
     </tr>
     <tr>
       <td>Per month</td>
       <td>
-      <%= current_user.todos.where('date BETWEEN ? AND ?', 1.month.ago, @selected_date.end_of_day).where(done: true).count %>
+      <%= @date_last_month.where(done: true).count %>
       </td>
       <td>
-        <%= current_user.todos.where('date BETWEEN ? AND ?', 1.month.ago, @selected_date.end_of_day).where(done: false).count %>
+        <%= @date_last_month.where(done: false).count %>
+      </td>
+    </tr>
+    <tr>
+      <td>All</td>
+      <td>
+        <%= @all_time.where(done: true).count %>
+      </td>
+      <td>
+        <%= @all_time.where(done: false).count %>
       </td>
     </tr>
   </tbody>
