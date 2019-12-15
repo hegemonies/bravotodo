@@ -44,7 +44,12 @@ class TodosController < ApplicationController
   end
 
   def complete
-    @todo.update_attribute(:done, true)
+    @todo = current_user.todos.find(params[:id])
+    if @todo.done
+      @todo.update_attribute(:done, false)
+    else
+      @todo.update_attribute(:done, true)
+    end
     redirect_to todos_path, notice: 'Todo was successfully complete.'
   end
 
