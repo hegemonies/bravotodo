@@ -352,3 +352,18 @@ td a {
 .todo-edit:hover {
     background-image: url("edit-hover.png");
 }
+
+.statistic {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 5%;
+    /*width: 400px;*/
+}
+
+.statistic-block {
+    display: inline-block;
+    float: left;
+    width: 100px;
+    margin-left: 5%;
+}

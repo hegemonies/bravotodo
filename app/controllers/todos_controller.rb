@@ -4,7 +4,7 @@ class TodosController < ApplicationController
 
   # GET /todos
   def index
-    @todos = current_user.todos.all
+    @todos = current_user.todos.order(:done).all
   end
 
   # GET /todos/1

@@ -1,0 +1,40 @@
+
+<p class="enter-h2">Statistic</p>
+
+<table cellpadding="0" cellspacing="0" border="0">
+  <% @selected_date = Time.current %>
+  <tbody>
+    <tr>
+      <th>Time</th>
+      <th>Count complete</th>
+      <th>Count not complete</th>
+    </tr>
+    <tr>
+      <td>Per day</td>
+      <td>
+        <%= current_user.todos.where('date BETWEEN ? AND ?', 1.day.ago, @selected_date.end_of_day).where(done: true).count %>
+      </td>
+      <td>
+        <%= current_user.todos.where('date BETWEEN ? AND ?', 1.day.ago, @selected_date.end_of_day).where(done: false).count %>
+      </td>
+    </tr>
+    <tr>
+      <td>Per week</td>
+      <td>
+        <%= current_user.todos.where('date BETWEEN ? AND ?', 1.week.ago, @selected_date.end_of_day).where(done: true).count %>
+      </td>
+      <td>
+        <%= current_user.todos.where('date BETWEEN ? AND ?', 1.week.ago, @selected_date.end_of_day).where(done: false).count %>
+      </td>
+    </tr>
+    <tr>
+      <td>Per month</td>
+      <td>
+      <%= current_user.todos.where('date BETWEEN ? AND ?', 1.month.ago, @selected_date.end_of_day).where(done: true).count %>
+      </td>
+      <td>
+        <%= current_user.todos.where('date BETWEEN ? AND ?', 1.month.ago, @selected_date.end_of_day).where(done: false).count %>
+      </td>
+    </tr>
+  </tbody>
+</table>
