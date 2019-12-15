@@ -16,9 +16,8 @@
       <thead>
       <tr>
         <th>Done</th>
-        <th>Description</th>
+        <th colspan="3">Description</th>
         <th>Date</th>
-        <th>Show</th>
         <th>Edit</th>
         <th>Delete</th>
       </tr>
@@ -30,19 +29,28 @@
     <table  cellpadding="0" cellspacing="0" border="0">
       <tbody>
       <% @todos.each do |todo| %>
-        <tr>
-          <td><%= todo.done %></td>
-          <td><%= todo.description %></td>
+        <% if todo.done %>
+          <tr class="compete-todo">
+        <% else %>
+          <tr>
+        <% end %>
+          <td>
+            <% if todo.done %>
+              <%= link_to '  ', complete_todo_path(todo), method: :patch, class: "todo-complete" %>
+            <% else %>
+              <%= link_to '  ', complete_todo_path(todo), method: :patch, class: "todo-uncomplete" %>
+            <% end %>
+          </td>
+          <td colspan="3"><%= todo.description %></td>
           <td><%= todo.date %></td>
-          <td><%= link_to 'Show', todo %></td>
-          <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
-          <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to '  ', edit_todo_path(todo), class: "todo-edit" %></td>
+          <td><%= link_to '  ', todo, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete-todo" %></td>
         </tr>
       <% end %>
       </tbody>
     </table>
   </div>
 
-  <br>
+  <%= render 'statistic' %>
 
 </div>

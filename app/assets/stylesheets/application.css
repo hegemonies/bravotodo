@@ -10,7 +10,6 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
@@ -25,7 +24,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-    top: 50%;
+    top: 55%;
 }
 
 .enter-h1 {
@@ -149,8 +148,9 @@ input {
 .checkbox label:hover ~ .checkbox-checkmark::after{display:block;opacity:0.5;}
 
 .checkbox.tiny label {
-    color: #ffffff;
-    font-size:0.9em;
+    color: #212126;
+    font-family: Ubuntu, serif;
+    font-size: 14px;
 }
 
 .checkbox.tiny .checkbox-container .checkbox-checkmark {
@@ -206,7 +206,7 @@ em {
 
 .button-back {
     background-image: url("icons8-arrow-left-64 1.svg");
-    margin: auto;
+    /*margin: auto;*/
     padding: 14px 23px;
 }
 
@@ -217,56 +217,52 @@ em {
 
 .button-exit {
     background-image: url("icons8-exit-sign-100 (1) 1.png");
-    margin: auto;
-    padding: 8px 14px;
+    /*margin: auto;*/
+    padding: 7px 14px;
 }
 
 .right-side {
     position: absolute;
     float: left;
-    margin-left: 90%;
-    margin-top: 50px;
-}
-
-.left-side {
-    position: absolute;
-    float: left;
-    margin-left: 10%;
+    margin-left: 85%;
     margin-top: 50px;
 }
 
 table {
+    border-collapse: collapse;
+    border: 0;
     width:100%;
     table-layout: fixed;
-    background: -webkit-linear-gradient(left, #201a79, #3756ef);
-    background: linear-gradient(to right, #201a79, #3756ef);
+    background-color: rgba(243, 198, 39, 0.8);
     font-family: 'Roboto', sans-serif;
 }
 .tbl-header {
-    background-color: rgba(255,255,255,0.3);
+    /*background-color: rgba(33, 33, 38, 0.3);*/
 }
 .tbl-content {
-    height:300px;
-    overflow-x:auto;
-    margin-top: 0px;
-    border: 1px solid rgba(255,255,255,0.3);
+    height: 300px;
+    overflow-x: auto;
+    margin-top: 0;
+    border: 0;
 }
 th {
     padding: 20px 15px;
-    text-align: left;
+    text-align: center;
     font-weight: 500;
-    font-size: 12px;
-    color: #fff;
+    font-size: 14px;
+    color: rgba(33, 33, 38, 0.96);;
     text-transform: uppercase;
+    font-family: Ubuntu, serif;
 }
 td {
     padding: 15px;
-    text-align: left;
+    text-align: center;
     vertical-align:middle;
     font-weight: 300;
-    font-size: 12px;
-    color: #fff;
+    font-size: 14px;
+    color: rgba(33, 33, 38, 0.96);;
     border-bottom: solid 1px rgba(255,255,255,0.1);
+    font-family: Ubuntu, serif;
 }
 ::-webkit-scrollbar {
     width: 6px;
@@ -279,7 +275,7 @@ td {
 }
 
 td a {
-    color: #fff
+    color: rgba(33, 33, 38, 0.96);
 }
 
 #notice {
@@ -296,6 +292,77 @@ td a {
 
 .plus_todo {
     background-image: url("plus.png");
-    padding: 1.5px 10px;
+    /*padding: 1.5px 10px;*/
     margin: auto auto auto 90%;
+    padding: 14.5px 24px;
+}
+
+.user-name {
+    font-family: Ubuntu, serif;
+    font-style: normal;
+    font-weight: normal;
+    margin: 6px;
+    color: #3756ef;
+}
+
+.user-image {
+    background-image: url("ico-user-image.png");
+    background-size: 72px;
+    padding: 10px 10px;
+}
+
+.compete-todo {
+    text-decoration: line-through;
+    text-decoration-color: #3da5f4
+}
+
+.delete-todo {
+    background-image: url("delete.png");
+    padding: 12px 22px;
+}
+
+.delete-todo:hover {
+    background-image: url("delete-hover.png");
+}
+
+.todo-complete {
+    background-image: url("complete.png");
+    padding: 12px 22px;
+}
+
+.todo-uncomplete {
+    background-image: url("uncomplete.png");
+    padding: 12px 22px;
+}
+
+.todo-complete:hover {
+    background-image: url("compelete-hover.png");
+}
+
+.todo-uncomplete:hover {
+    background-image: url("compelete-hover.png");
+}
+
+.todo-edit {
+    background-image: url("edit.png");
+    padding: 12px 22px;
+}
+
+.todo-edit:hover {
+    background-image: url("edit-hover.png");
+}
+
+.statistic {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 5%;
+    /*width: 400px;*/
+}
+
+.statistic-block {
+    display: inline-block;
+    float: left;
+    width: 100px;
+    margin-left: 5%;
 }

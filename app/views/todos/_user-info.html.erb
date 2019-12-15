@@ -1,9 +1,12 @@
-<!--user info-->
-<div>
-  <p class="enter-h5"><% puts current_user.email %></p>
-</div>
 
-<!--sign out-->
 <div class="right-side">
-  <%= link_to "    ", destroy_user_session_path, :method => :delete , class: "button-exit"%>
+  <div>
+    <%= image_tag("ico-user-image.png", :alt => "che", style: "float:left") %>
+    <p class="user-name" style="float:left"><%= current_user.email %></p>
+  </div>
+  <br>
+  <div>
+    <p style="float:left"><%= link_to "    ", destroy_user_session_path, :method => :delete , class: "button-exit"%></p>
+    <p style="float:left" class="user-name">Exit</p>
+  </div>
 </div>

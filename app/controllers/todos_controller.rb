@@ -4,7 +4,7 @@ class TodosController < ApplicationController
 
   # GET /todos
   def index
-    @todos = current_user.todos.all
+    @todos = current_user.todos.order(:done).all
   end
 
   # GET /todos/1
@@ -35,13 +35,22 @@ class TodosController < ApplicationController
 
   # PATCH/PUT /todos/1
   def update
-    respond_to do |format|
-      if @todo.update(todo_params)
-        format.html { redirect_to todos_path, notice: 'Todo was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
+    @todo = current_user.todos.find(params[:id])
+    if @todo.update(todo_params)
+      redirect_to todos_path, notice: 'Todo was successfully updated.'
+    else
+      render :edit
     end
+  end
+
+  def complete
+    @todo = current_user.todos.find(params[:id])
+    if @todo.done
+      @todo.update_attribute(:done, false)
+    else
+      @todo.update_attribute(:done, true)
+    end
+    redirect_to todos_path, notice: 'Todo was successfully complete.'
   end
 
   # DELETE /todos/1
