@@ -316,3 +316,21 @@ td a {
     background-image: url("icons8-delete.png");
     padding: 15px 20px;
 }
+
+.todo-complete {
+    background-image: url("complete.png");
+    padding: 10px 20px;
+}
+
+.todo-uncomplete {
+    background-image: url("uncomplete.png");
+    padding: 10px 20px;
+}
+
+.todo-complete:hover {
+    background-image: url("compelete-hover.png");
+}
+
+.todo-uncomplete:hover {
+    background-image: url("compelete-hover.png");
+}

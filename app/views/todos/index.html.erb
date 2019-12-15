@@ -35,7 +35,11 @@
           <tr>
         <% end %>
           <td>
-            <%= link_to 'complete', complete_todo_path(todo), method: :patch %>
+            <% if todo.done %>
+              <%= link_to '  ', complete_todo_path(todo), method: :patch, class: "todo-complete" %>
+            <% else %>
+              <%= link_to '  ', complete_todo_path(todo), method: :patch, class: "todo-uncomplete" %>
+            <% end %>
           </td>
           <td><%= todo.description %></td>
           <td><%= todo.date %></td>
