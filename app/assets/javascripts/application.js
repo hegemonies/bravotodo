@@ -14,3 +14,15 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function () {
+    console.log("hi")
+});
+
+$(".tiny").on("click", function () {
+    console.log("hi tiny")
+});
+
+function doComplete() {
+    alert("complete")
+}

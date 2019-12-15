@@ -43,6 +43,11 @@ class TodosController < ApplicationController
     end
   end
 
+  def complete
+    @todo.update_attribute(:done, true)
+    redirect_to todos_path, notice: 'Todo was successfully complete.'
+  end
+
   # DELETE /todos/1
   def destroy
     @todo.destroy
