@@ -43,8 +43,8 @@
           </td>
           <td><%= todo.description %></td>
           <td><%= todo.date %></td>
-          <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
-          <td><%= link_to '   ', todo, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete-todo" %></td>
+          <td><%= link_to '  ', edit_todo_path(todo), class: "todo-edit" %></td>
+          <td><%= link_to '  ', todo, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete-todo" %></td>
         </tr>
       <% end %>
       </tbody>

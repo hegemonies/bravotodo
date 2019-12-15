@@ -318,18 +318,22 @@ td a {
 }
 
 .delete-todo {
-    background-image: url("icons8-delete.png");
-    padding: 15px 20px;
+    background-image: url("delete.png");
+    padding: 12px 22px;
+}
+
+.delete-todo:hover {
+    background-image: url("delete-hover.png");
 }
 
 .todo-complete {
     background-image: url("complete.png");
-    padding: 10px 20px;
+    padding: 12px 22px;
 }
 
 .todo-uncomplete {
     background-image: url("uncomplete.png");
-    padding: 10px 20px;
+    padding: 12px 22px;
 }
 
 .todo-complete:hover {
@@ -338,4 +342,13 @@ td a {
 
 .todo-uncomplete:hover {
     background-image: url("compelete-hover.png");
+}
+
+.todo-edit {
+    background-image: url("edit.png");
+    padding: 12px 22px;
+}
+
+.todo-edit:hover {
+    background-image: url("edit-hover.png");
 }
