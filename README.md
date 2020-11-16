@@ -22,11 +22,11 @@ $ docker-compose -f docker/docker-compose.yml up
 ###### Note: run all scripts from root folder (./bravotodo)
 ##### Run:
 ```shell script
-$ run_conrainers.sh
+$ docker/run_conrainers.sh
 ```
 ##### Stop:
 ```shell script
-$ kill_containers.sh
+$ docker/kill_containers.sh
 ```
 
 #### How to print status of running containers:
